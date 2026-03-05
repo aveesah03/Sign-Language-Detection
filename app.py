@@ -15,10 +15,11 @@ stream_ready = True
 LANGUAGES = {
     "isl": {
         "actions": [
-            'Good Morning', 'Good Afternoon', 'Good Evening',
-            'Good Night', 'Hello', 'I am not worried',
-            'I understand', 'I dont understand',
-            'I dont know', 'I know'
+            'Good Morning',
+            'See you tomorrow',
+            'Nice to meet you',
+            'I am sorry for this mistake',
+            'How are you'
         ],
         "models": {
             "cnn": "cnn_isl.h5",
@@ -29,11 +30,11 @@ LANGUAGES = {
     },
     "asl": {
         "actions": [
-            'Nice to meet you', 'I am learning sign',
-            'Whats your name', 'Where are you from',
-            'How are you', 'I am fine',
-            'What time is it', 'Where do you work',
-            'Thank you', 'Excuse me'
+            'Nice to meet you',
+            'I am learning sign',
+            'Whats your name',
+            'Where are you from',
+            'How are you'
         ],
         "models": {
             "cnn": "cnn_asl.h5",
@@ -44,11 +45,11 @@ LANGUAGES = {
     },
     "bsl": {
         "actions": [
-            'See you later', 'Hello, welcome',
-            'Nice to see you', 'Surprised to see you',
-            'How are you', 'What is your name',
-            'How can I help you', 'Bless you',
-            'Be careful please', 'Wait there'
+            'Hello, welcome',
+            'Nice to see you',
+            'What is your name',
+            'How can I help you',
+            'Be careful please'
         ],
         "models": {
             "cnn": "cnn_bsl.h5",
@@ -79,7 +80,7 @@ mp_drawing = mp.solutions.drawing_utils
 
 
 
-SEQUENCE_LENGTH = 30
+SEQUENCE_LENGTH = 120
 
 def extract_keypoints(results):
     pose = np.array([[p.x, p.y, p.z, p.visibility]
